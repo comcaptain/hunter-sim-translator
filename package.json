@@ -1,14 +1,15 @@
 {
-  "name": "hunter-sim-translator",
-  "version": "1.0.0",
-  "description": "A translater for HunterSim",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "typescript": "^4.6.3"
-  }
+	"name": "hunter-sim-translator",
+	"version": "1.0.0",
+	"description": "A translater for HunterSim",
+	"main": "dist/app.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "npx tsc && node dist/app.js"
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"typescript": "^4.6.3"
+	}
 }
