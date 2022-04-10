@@ -1,6 +1,15 @@
 import * as https from 'https';
+import { createGunzip } from 'zlib';
 
-https.get("https://cn.tbc.wowhead.com/item=32235", response =>
+
+https.get("https://nyaa.si/", response =>
 {
-	console.info(Buffer.from(response.headers.location!, 'binary').toString('utf8'));
+	console.info(response.headers['content-type']);
+	console.info(response.headers['content-encoding']);
+	const gunzip = createGunzip();
+	response.pipe(gunzip);
+	gunzip.on("data", d =>
+	{
+		console.info(d.toString())
+	})
 })
